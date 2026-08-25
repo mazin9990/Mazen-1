@@ -1,71 +1,606 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الفارسي للخدمات اللوجستية والاستثمار | ماجد الفارسي</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Tajawal', sans-serif; }
-        .hero-bg { background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); }
-        .gold-accent { color: #D97706; }
-        .bg-gold { background-color: #D97706; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+  <title>السلامة للاستثمار</title>
+  <!-- Font Awesome (any version) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- Google Font: Tajawal (arabic friendly) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: #f8faff;
+      color: #1a2639;
+      line-height: 1.6;
+    }
+
+    /* scroll behavior */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ===== التجريبي (نموذج تجريبي) ===== */
+    .demo-badge {
+      background: linear-gradient(135deg, #0b2b4a, #1b4a7a);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 60px;
+      display: inline-block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      box-shadow: 0 8px 18px rgba(0,20,50,0.15);
+      margin-bottom: 10px;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .demo-badge i {
+      margin-left: 8px;
+      color: #ffd966;
+    }
+
+    /* header / nav */
+    .navbar {
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.03);
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      border-bottom: 1px solid rgba(0,0,0,0.02);
+    }
+
+    .nav-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: #0b2b4a;
+      letter-spacing: -0.5px;
+    }
+    .logo span {
+      color: #c9a84c;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1a2639;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 8px 16px;
+      border-radius: 40px;
+      transition: 0.25s ease;
+      background: transparent;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: #0b2b4a;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(11,43,74,0.25);
+    }
+
+    .nav-links a i {
+      margin-left: 6px;
+    }
+
+    /* hero */
+    .hero {
+      background: linear-gradient(145deg, #eef4ff, #ffffff);
+      padding: 50px 0 40px;
+      border-bottom: 1px solid rgba(0,0,0,0.02);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-content h2 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #0b2b4a;
+    }
+    .hero-content h2 span {
+      color: #c9a84c;
+      display: block;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #2c3e5c;
+      margin: 20px 0 25px;
+      opacity: 0.9;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 30px;
+      margin-top: 15px;
+    }
+    .stat-item {
+      background: white;
+      padding: 12px 28px;
+      border-radius: 60px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+      border: 1px solid rgba(0,0,0,0.02);
+    }
+    .stat-item strong {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #0b2b4a;
+      display: block;
+      line-height: 1.2;
+    }
+    .stat-item span {
+      font-size: 0.9rem;
+      color: #4a5b79;
+      font-weight: 500;
+    }
+
+    .hero-image {
+      background: linear-gradient(135deg, #dce6f5, #f0f4fe);
+      padding: 30px;
+      border-radius: 60px 20px 60px 20px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,20,40,0.04);
+    }
+    .hero-image i {
+      font-size: 8rem;
+      color: #0b2b4a;
+      opacity: 0.3;
+    }
+    .hero-image h3 {
+      color: #0b2b4a;
+      font-weight: 700;
+      margin-top: 10px;
+    }
+
+    /* sections générales */
+    .section {
+      padding: 70px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.02);
+    }
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #0b2b4a;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    .section-title:after {
+      content: '';
+      width: 70px;
+      height: 5px;
+      background: #c9a84c;
+      display: block;
+      margin-top: 10px;
+      border-radius: 10px;
+    }
+    .section-sub {
+      color: #3d5170;
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .card {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 30px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.02);
+      transition: 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.02);
+      text-align: center;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 40px rgba(11,43,74,0.06);
+      border-color: #c9a84c30;
+    }
+    .card i {
+      font-size: 2.8rem;
+      color: #0b2b4a;
+      background: #e9eff9;
+      padding: 18px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+    .card h4 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #0b2b4a;
+    }
+    .card p {
+      color: #4a5b79;
+    }
+
+    .btn {
+      background: #0b2b4a;
+      border: none;
+      color: white;
+      padding: 12px 35px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.2s ease;
+      display: inline-block;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(11,43,74,0.2);
+      border: 1px solid transparent;
+    }
+    .btn:hover {
+      background: #c9a84c;
+      color: #0b2b4a;
+      box-shadow: 0 8px 20px rgba(201,168,76,0.3);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #0b2b4a;
+      color: #0b2b4a;
+      box-shadow: none;
+    }
+    .btn-outline:hover {
+      background: #0b2b4a;
+      color: white;
+    }
+
+    /* من نحن */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .about-text p {
+      margin-bottom: 18px;
+      color: #2c3e5c;
+    }
+
+    /* الخدمات */
+    .service-card {
+      text-align: right;
+    }
+    .service-card i {
+      background: #0b2b4a10;
+    }
+
+    /* مشاريع / إنجازات */
+    .project-card {
+      background: white;
+      border-radius: 30px;
+      padding: 20px;
+      border: 1px solid #eef4ff;
+      transition: 0.25s;
+    }
+    .project-card:hover {
+      border-color: #c9a84c;
+    }
+    .project-card .icon-big {
+      font-size: 3rem;
+      color: #0b2b4a;
+      opacity: 0.5;
+    }
+
+    /* نموذج تواصل + خريطة */
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-group label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid #dde4ef;
+      border-radius: 30px;
+      font-family: 'Tajawal', sans-serif;
+      background: white;
+      transition: 0.2s;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #0b2b4a;
+      box-shadow: 0 0 0 4px rgba(11,43,74,0.05);
+    }
+    .map-container {
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.02);
+      height: 100%;
+      min-height: 300px;
+      background: #dce6f5;
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 300px;
+      border: 0;
+    }
+
+    /* admin ( صفحة إدارية ) */
+    .admin-card {
+      background: white;
+      padding: 35px;
+      border-radius: 40px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.02);
+      max-width: 500px;
+      margin: 0 auto;
+      border: 1px solid #eef4ff;
+    }
+    .admin-card h3 {
+      font-weight: 800;
+    }
+
+    /* footer */
+    .footer {
+      background: #0b2b4a;
+      color: rgba(255,255,255,0.8);
+      padding: 40px 0 20px;
+    }
+    .footer a {
+      color: #c9a84c;
+      text-decoration: none;
+    }
+    .footer-social i {
+      font-size: 1.6rem;
+      margin-left: 15px;
+      color: rgba(255,255,255,0.6);
+      transition: 0.2s;
+    }
+    .footer-social i:hover {
+      color: #c9a84c;
+    }
+
+    /* responsive */
+    @media (max-width: 900px) {
+      .hero-grid, .about-grid, .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+      .nav-flex {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .nav-links {
+        justify-content: center;
+      }
+      .hero-content h2 {
+        font-size: 2.5rem;
+      }
+    }
+    @media (max-width: 550px) {
+      .hero-stats {
+        flex-wrap: wrap;
+      }
+      .demo-badge {
+        font-size: 0.75rem;
+        padding: 6px 16px;
+      }
+    }
+
+    /* extra shine */
+    .glow-icon {
+      filter: drop-shadow(0 8px 12px rgba(11,43,74,0.08));
+    }
+    .section-alt {
+      background: #fafcff;
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-    <!-- Navbar -->
-    <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-lg">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-wide">
-                الفارسي <span class="gold-accent">للاستثمار واللوجستيات</span>
-            </div>
-            <div class="hidden md:flex space-x-8 space-x-reverse font-medium">
-                <a href="#home" class="hover:text-amber-500 transition">الرئيسية</a>
-                <a href="#about" class="hover:text-amber-500 transition">من نحن</a>
-                <a href="#services" class="hover:text-amber-500 transition">الخدمات</a>
-                <a href="#projects" class="hover:text-amber-500 transition">المشاريع</a>
-                <a href="#contact" class="hover:text-amber-500 transition">اتصل بنا</a>
-            </div>
-            <a href="#contact" class="bg-gold hover:bg-amber-600 text-white px-5 py-2 rounded-lg transition font-bold shadow-md">طلب استشارة</a>
+<!-- ===== نموذج تجريبي في أعلى الصفحة ===== -->
+<div style="background: #0b2b4a; padding: 8px 0; text-align: center; border-bottom: 2px solid #c9a84c;">
+  <div class="container">
+    <span class="demo-badge"><i class="fas fa-flask"></i> نموذج تجريبي — شركة السلامة للاستثمار  •  v2.0</span>
+  </div>
+</div>
+
+<!-- ===== HEADER / NAV ===== -->
+<nav class="navbar">
+  <div class="container nav-flex">
+    <div class="logo">
+      <h1>السلامة <span>للاستثمار</span></h1>
+    </div>
+    <div class="nav-links">
+      <a href="#home" class="active"><i class="fas fa-home"></i> الرئيسية</a>
+      <a href="#about"><i class="fas fa-users"></i> من نحن</a>
+      <a href="#services"><i class="fas fa-concierge-bell"></i> الخدمات</a>
+      <a href="#projects"><i class="fas fa-trophy"></i> الإنجازات</a>
+      <a href="#admin"><i class="fas fa-user-cog"></i> إدارة</a>
+      <a href="#contact"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HOME ===== -->
+<section id="home" class="hero">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <h2>استثمار حكيم <span>لوجستيات متكاملة</span></h2>
+      <p>تحت قيادة رؤية حكيمة، نقدم حلولاً لوجستية وفرصاً استثمارية مستدامة تدعم أعمالك بكفاءة وأمان.</p>
+      <div class="hero-stats">
+        <div class="stat-item"><strong>99%</strong><span>دقة التوصيل</span></div>
+        <div class="stat-item"><strong>150+</strong><span>مشروع استثماري</span></div>
+        <div class="stat-item"><strong>+20</strong><span>شريك استراتيجي</span></div>
+      </div>
+      <div style="margin-top: 30px;">
+        <a href="#contact" class="btn"><i class="fas fa-handshake"></i> طلب استشارة</a>
+        <a href="#projects" class="btn btn-outline" style="margin-right: 12px;"><i class="fas fa-chart-line"></i> استكشف المشاريع</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <i class="fas fa-building-columns"></i>
+      <h3>السلامة للاستثمار</h3>
+      <p style="color:#2c3e5c;">رؤية حكيمة، حلول شاملة</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== من نحن ===== -->
+<section id="about" class="section">
+  <div class="container">
+    <h2 class="section-title">من نحن</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p><i class="fas fa-quote-right" style="color:#c9a84c; font-size:1.8rem; opacity:0.6;"></i> شركة السلامة للاستثمار هي ذراع استثماري متكامل، نركز على تطوير مشاريع لوجستية وصناعية بمعايير عالمية. نؤمن بأن الاستثمار الحقيقي هو الذي يبني المستقبل ويدعم الاقتصاد الوطني.</p>
+        <p>نقدم حلولاً مبتكرة في سلسلة الإمداد، وإدارة المستودعات، والنقل الذكي، إلى جانب استشارات مالية واستثمارية لضمان نمو أعمال شركائنا.</p>
+        <a href="#contact" class="btn" style="margin-top: 15px;"><i class="fas fa-arrow-left"></i> تواصل معنا</a>
+      </div>
+      <div style="background: #eef4ff; border-radius: 40px; padding: 30px; text-align: center;">
+        <i class="fas fa-people-group" style="font-size: 6rem; color: #0b2b4a; opacity: 0.2;"></i>
+        <h3 style="color: #0b2b4a; margin-top: 10px;">فريق الخبراء</h3>
+        <p>نخبة من المستشارين والمخططين اللوجستيين</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== الخدمات ===== -->
+<section id="services" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">خدماتنا</h2>
+    <p class="section-sub">حلول متكاملة تلبي احتياجات أعمالك</p>
+    <div class="cards-grid">
+      <div class="card service-card"><i class="fas fa-truck-fast"></i><h4>لوجستيات متقدمة</h4><p>إدارة سلاسل التوريد، نقل، تخزين، توزيع باحترافية.</p></div>
+      <div class="card service-card"><i class="fas fa-chart-pie"></i><h4>استشارات استثمارية</h4><p>دراسات جدوى، تحليل أسواق، تخطيط مالي طويل الأمد.</p></div>
+      <div class="card service-card"><i class="fas fa-warehouse"></i><h4>حلول المستودعات</h4><p>تصميم وإدارة مراكز تخزين ذكية بأحدث الأنظمة.</p></div>
+      <div class="card service-card"><i class="fas fa-shield-halved"></i><h4>حماية وأمان</h4><p>أنظمة مراقبة، تأمين، وحماية بيانات وسلع.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== المشاريع / الإنجازات ===== -->
+<section id="projects" class="section">
+  <div class="container">
+    <h2 class="section-title">الإنجازات والمشاريع</h2>
+    <p class="section-sub">نفخر بشراكاتنا ومشاريعنا الناجحة</p>
+    <div class="cards-grid">
+      <div class="project-card"><div class="icon-big"><i class="fas fa-city"></i></div><h4>مدينة لوجستية</h4><p>تطوير مدينة لوجستية متكاملة بمساحة 2 مليون م²</p><span style="color:#c9a84c; font-weight:700;">+150 مليون</span></div>
+      <div class="project-card"><div class="icon-big"><i class="fas fa-ship"></i></div><h4>ميناء جاف</h4><p>إنشاء ميناء جاف يربط بين الطرق البرية والبحرية</p><span style="color:#c9a84c; font-weight:700;">اكتمال 2025</span></div>
+      <div class="project-card"><div class="icon-big"><i class="fas fa-robot"></i></div><h4>أتمتة المستودعات</h4><p>تطبيق أنظمة روبوتية وذكاء اصطناعي في التخزين</p><span style="color:#c9a84c; font-weight:700;">كفاءة +40%</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ADMIN (صفحة إدارة) ===== -->
+<section id="admin" class="section section-alt">
+  <div class="container" style="text-align: center;">
+    <h2 class="section-title" style="text-align: right;">لوحة الإدارة</h2>
+    <div class="admin-card">
+      <i class="fas fa-user-shield" style="font-size: 3.5rem; color: #0b2b4a; opacity: 0.2;"></i>
+      <h3>الدخول إلى لوحة التحكم</h3>
+      <p style="color: #4a5b79;">مخصص للمديرين والشركاء</p>
+      <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+        <button class="btn" onclick="alert('تم تفعيل لوحة الإدارة (تجريبي)')"><i class="fas fa-sign-in-alt"></i> دخول</button>
+        <button class="btn btn-outline" onclick="alert('طلب صلاحيات إدارية (تجريبي)')"><i class="fas fa-key"></i> طلب صلاحية</button>
+      </div>
+      <p style="margin-top: 20px; font-size: 0.9rem; background: #eef4ff; padding: 12px; border-radius: 40px;"><i class="fas fa-lock"></i> بيئة آمنة • حماية متقدمة</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== اتصل بنا + خريطة + نموذج ===== -->
+<section id="contact" class="section">
+  <div class="container">
+    <h2 class="section-title">اتصل بنا</h2>
+    <div class="contact-wrap">
+      <!-- نموذج تواصل -->
+      <div>
+        <form onsubmit="alert('شكراً لتواصلك مع شركة السلامة للاستثمار، سنرد عليك قريباً.'); return false;">
+          <div class="form-group"><label><i class="fas fa-user"></i> الاسم</label><input type="text" placeholder="أدخل اسمك" required /></div>
+          <div class="form-group"><label><i class="fas fa-envelope"></i> البريد الإلكتروني</label><input type="email" placeholder="example@domain.com" required /></div>
+          <div class="form-group"><label><i class="fas fa-comment"></i> الرسالة</label><textarea rows="4" placeholder="تفاصيل طلبك أو استشارتك"></textarea></div>
+          <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> إرسال</button>
+        </form>
+        <div style="margin-top: 20px; display: flex; gap: 20px; flex-wrap: wrap;">
+          <span><i class="fas fa-phone" style="color:#c9a84c;"></i> +966 12 345 6789</span>
+          <span><i class="fas fa-envelope" style="color:#c9a84c;"></i> info@alsalamah-invest.com</span>
         </div>
-    </nav>
+      </div>
+      <!-- خريطة Google -->
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.912376465293!2d46.67568331545413!3d24.77430728461684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f1c6b3e3f4b3f%3A0x3f2c3e4d5e6f7a8b!2sRiyadh%20Saudi%20Arabia!5e0!3m2!1sen!2ssa!4v1617798765432!5m2!1sen!2ssa" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Hero Section (الرئيسية) -->
-    <section id="home" class="hero-bg text-white py-24 px-6 text-center md:text-right">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <span class="bg-amber-500/20 text-amber-400 px-4 py-1.5 rounded-full text-sm font-semibold border border-amber-500/30">رؤية حكيمة، وحلول لوجستية شاملة</span>
-                <h1 class="text-4xl md:text-6xl font-black mt-6 leading-tight">
-                    قيادة الاستثمار <br><span class="gold-accent">وتكامل سلاسل الإمداد</span>
-                </h1>
-                <p class="text-gray-300 text-lg mt-6 leading-relaxed">
-                    تحت قيادة <strong>ماجد الفارسي</strong>، نقدم حلولاً لوجستية وفرصاً استثمارية مستدامة تبني المستقبل وتدعم توسّع أعمالك بكفاءة وأمان.
-                </p>
-                <div class="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
-                    <a href="#projects" class="bg-gold hover:bg-amber-600 text-white font-bold px-8 py-3.5 rounded-lg shadow-lg transition">استكشف المشاريع</a>
-                    <a href="#services" class="border border-gray-500 hover:border-amber-500 text-white font-bold px-8 py-3.5 rounded-lg transition">خدماتنا</a>
-                </div>
-            </div>
-            <div class="relative">
-                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 shadow-2xl">
-                    <h3 class="text-xl font-bold mb-4 gold-accent">أرقام ومؤشرات النجاح</h3>
-                    <div class="grid grid-cols-2 gap-6 text-center">
-                        <div class="p-4 bg-slate-900/50 rounded-xl">
-                            <span class="block text-3xl font-extrabold text-amber-500">+150</span>
-                            <span class="text-sm text-gray-400">مشروع استثماري</span>
-                        </div>
-                        <div class="p-4 bg-slate-900/50 rounded-xl">
-                            <span class="block text-3xl font-extrabold text-amber-500">99%</span>
-                            <span class="text-sm text-gray-400">دقة التوصيل والتدفق</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+      <div>
+        <h3 style="color: white; font-weight: 800;">السلامة للاستثمار</h3>
+        <p style="font-size: 0.9rem;">رؤية حكيمة، حلول لوجستية شاملة</p>
+        <p style="margin-top: 10px; font-size: 0.85rem;">© 2026 جميع الحقوق محفوظة</p>
+      </div>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <hr style="border: 0.5px solid rgba(255,255,255,0.06); margin: 25px 0 10px;">
+    <p style="font-size: 0.8rem; opacity:0.6; text-align: center;"><i class="fas fa-shield-alt"></i> حماية و سرعة • نظام آمن</p>
+  </div>
+</footer>
 
+<!-- تفعيل التنقل بين الأقسام (تحديد active) -->
+<script>
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+  // تفعيل جميع الأزرار والأيقونات بشكل تجريبي (تظهر تفاعلية)
+  console.log('موقع السلامة للاستثمار - جميع الأزرار مفعلة');
+</script>
 </body>
 </html>
