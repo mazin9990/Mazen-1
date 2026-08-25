@@ -32,6 +32,9 @@
       --color-accent: #c9a84c;
       --color-dark: #0b2b4a;
       --color-dark-light: #1b4a7a;
+      --color-success: #2ecc71;
+      --color-danger: #e74c3c;
+      --color-warning: #f39c12;
 
       --border-light: rgba(0,0,0,0.02);
       --border-card: rgba(0,0,0,0.02);
@@ -106,6 +109,1431 @@
     }
     .demo-badge i {
       margin-left: 8px;
+      color: #ffd966;
+    }
+
+    /* ===== Header / Nav ===== */
+    .navbar {
+      background: var(--bg-navbar);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.03);
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      border-bottom: 1px solid var(--border-light);
+      transition: background var(--transition-speed), border var(--transition-speed);
+    }
+
+    .nav-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .logo h1 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--color-dark);
+      letter-spacing: -0.5px;
+      transition: color var(--transition-speed);
+    }
+    [data-theme="dark"] .logo h1 {
+      color: #e8edf5;
+    }
+    .logo span {
+      color: var(--color-accent);
+    }
+
+    .nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 8px 16px;
+      border-radius: 40px;
+      transition: 0.25s ease;
+      background: transparent;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: var(--color-dark);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(11,43,74,0.25);
+    }
+    [data-theme="dark"] .nav-links a:hover,
+    [data-theme="dark"] .nav-links a.active {
+      background: var(--color-accent);
+      color: #0b2b4a;
+    }
+    .nav-links a i {
+      margin-left: 6px;
+    }
+
+    /* Language & Theme Toggle */
+    .lang-toggle, .theme-toggle {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: 40px;
+      padding: 8px 16px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: var(--shadow-card);
+    }
+    .lang-toggle:hover, .theme-toggle:hover {
+      background: var(--color-accent);
+      color: #0b2b4a;
+    }
+    .lang-toggle i, .theme-toggle i {
+      font-size: 0.9rem;
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      background: var(--bg-hero);
+      padding: 50px 0 40px;
+      border-bottom: 1px solid var(--border-light);
+      transition: background var(--transition-speed), border var(--transition-speed);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-content h2 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--text-primary);
+    }
+    .hero-content h2 span {
+      color: var(--color-accent);
+      display: block;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin: 20px 0 25px;
+      opacity: 0.9;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 30px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+    .stat-item {
+      background: var(--bg-card);
+      padding: 12px 28px;
+      border-radius: 60px;
+      box-shadow: var(--shadow-card);
+      border: 1px solid var(--border-card);
+      transition: background var(--transition-speed), border var(--transition-speed);
+    }
+    .stat-item strong {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      display: block;
+      line-height: 1.2;
+    }
+    .stat-item span {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .hero-image {
+      background: var(--bg-hero-image);
+      padding: 30px;
+      border-radius: 60px 20px 60px 20px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,20,40,0.04);
+      transition: background var(--transition-speed);
+    }
+    .hero-image i {
+      font-size: 8rem;
+      color: var(--color-dark);
+      opacity: 0.3;
+    }
+    .hero-image h3 {
+      color: var(--text-primary);
+      font-weight: 700;
+      margin-top: 10px;
+    }
+
+    /* ===== Sections ===== */
+    .section {
+      padding: 70px 0;
+      border-bottom: 1px solid var(--border-light);
+      transition: border var(--transition-speed);
+    }
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 30px;
+      position: relative;
+      transition: color var(--transition-speed);
+    }
+    .section-title:after {
+      content: '';
+      width: 70px;
+      height: 5px;
+      background: var(--color-accent);
+      display: block;
+      margin-top: 10px;
+      border-radius: 10px;
+    }
+    .section-sub {
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .card {
+      background: var(--bg-card);
+      padding: 30px 20px;
+      border-radius: 30px;
+      box-shadow: var(--shadow-card);
+      transition: 0.3s ease, background var(--transition-speed), box-shadow var(--transition-speed);
+      border: 1px solid var(--border-card);
+      text-align: center;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 40px rgba(11,43,74,0.06);
+      border-color: var(--color-accent);
+    }
+    [data-theme="dark"] .card:hover {
+      box-shadow: 0 18px 40px rgba(0,0,0,0.4);
+    }
+    .card i {
+      font-size: 2.8rem;
+      color: var(--color-dark);
+      background: var(--bg-hero);
+      padding: 18px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      transition: background var(--transition-speed), color var(--transition-speed);
+    }
+    [data-theme="dark"] .card i {
+      background: var(--bg-hero-image);
+      color: #c8d6e8;
+    }
+    .card h4 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+    .card p {
+      color: var(--text-muted);
+    }
+
+    /* ===== Buttons ===== */
+    .btn {
+      background: var(--color-dark);
+      border: none;
+      color: white;
+      padding: 12px 35px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.2s ease;
+      display: inline-block;
+      text-decoration: none;
+      box-shadow: var(--shadow-btn);
+      border: 1px solid transparent;
+    }
+    .btn:hover {
+      background: var(--color-accent);
+      color: #0b2b4a;
+      box-shadow: 0 8px 20px rgba(201,168,76,0.3);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--color-dark);
+      color: var(--color-dark);
+      box-shadow: none;
+    }
+    .btn-outline:hover {
+      background: var(--color-dark);
+      color: white;
+    }
+    [data-theme="dark"] .btn-outline {
+      border-color: #e8edf5;
+      color: #e8edf5;
+    }
+    [data-theme="dark"] .btn-outline:hover {
+      background: var(--color-accent);
+      color: #0b2b4a;
+      border-color: var(--color-accent);
+    }
+
+    .btn-success {
+      background: var(--color-success);
+      color: white;
+    }
+    .btn-success:hover {
+      background: #27ae60;
+      color: white;
+    }
+    .btn-danger {
+      background: var(--color-danger);
+      color: white;
+    }
+    .btn-danger:hover {
+      background: #c0392b;
+      color: white;
+    }
+    .btn-warning {
+      background: var(--color-warning);
+      color: white;
+    }
+    .btn-warning:hover {
+      background: #d68910;
+      color: white;
+    }
+
+    /* ===== About ===== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .about-text p {
+      margin-bottom: 18px;
+      color: var(--text-secondary);
+    }
+    .about-image-box {
+      background: var(--bg-hero);
+      border-radius: 40px;
+      padding: 30px;
+      text-align: center;
+      transition: background var(--transition-speed);
+    }
+    .about-image-box i {
+      font-size: 6rem;
+      color: var(--color-dark);
+      opacity: 0.2;
+    }
+    .about-image-box h3 {
+      color: var(--text-primary);
+      margin-top: 10px;
+    }
+    .about-image-box p {
+      color: var(--text-muted);
+    }
+
+    /* ===== Projects ===== */
+    .project-card {
+      background: var(--bg-card);
+      border-radius: 30px;
+      padding: 20px;
+      border: 1px solid var(--border-card);
+      transition: 0.25s, background var(--transition-speed), border var(--transition-speed);
+    }
+    .project-card:hover {
+      border-color: var(--color-accent);
+    }
+    .project-card .icon-big {
+      font-size: 3rem;
+      color: var(--color-dark);
+      opacity: 0.5;
+    }
+    .project-card h4 {
+      color: var(--text-primary);
+    }
+    .project-card p {
+      color: var(--text-muted);
+    }
+
+    /* ===== Contact ===== */
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-group label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 4px;
+      color: var(--text-primary);
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid var(--border-card);
+      border-radius: 30px;
+      font-family: 'Tajawal', sans-serif;
+      background: var(--bg-card);
+      color: var(--text-primary);
+      transition: 0.2s, background var(--transition-speed), color var(--transition-speed), border var(--transition-speed);
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--color-dark);
+      box-shadow: 0 0 0 4px rgba(11,43,74,0.05);
+    }
+    .map-container {
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      height: 100%;
+      min-height: 300px;
+      background: var(--bg-hero-image);
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 300px;
+      border: 0;
+    }
+
+    /* ===== Admin Panel ===== */
+    .admin-panel {
+      background: var(--bg-card);
+      border-radius: 40px;
+      padding: 40px;
+      box-shadow: var(--shadow-card);
+      border: 1px solid var(--border-card);
+      transition: background var(--transition-speed), border var(--transition-speed);
+    }
+
+    .admin-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--border-light);
+    }
+
+    .admin-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .stat-box {
+      background: var(--bg-hero);
+      padding: 20px;
+      border-radius: 20px;
+      text-align: center;
+      transition: background var(--transition-speed);
+    }
+    .stat-box i {
+      font-size: 2rem;
+      color: var(--color-accent);
+      margin-bottom: 8px;
+    }
+    .stat-box h4 {
+      color: var(--text-primary);
+      font-size: 1.8rem;
+    }
+    .stat-box p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      margin-top: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--bg-card);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 15px 20px;
+      text-align: right;
+      border-bottom: 1px solid var(--border-light);
+      color: var(--text-primary);
+    }
+
+    th {
+      background: var(--bg-hero);
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    td .action-btns {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .action-btns button {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: 0.2s;
+      font-weight: 600;
+    }
+
+    .action-btns .edit-btn {
+      background: var(--color-warning);
+      color: white;
+    }
+    .action-btns .edit-btn:hover {
+      background: #d68910;
+    }
+    .action-btns .delete-btn {
+      background: var(--color-danger);
+      color: white;
+    }
+    .action-btns .delete-btn:hover {
+      background: #c0392b;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(5px);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: var(--bg-card);
+      padding: 40px;
+      border-radius: 40px;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      border: 1px solid var(--border-card);
+    }
+
+    .modal-content h3 {
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+
+    .modal-content .form-group {
+      margin-bottom: 15px;
+    }
+
+    .modal-content .form-group input {
+      width: 100%;
+      padding: 12px 18px;
+      border: 1px solid var(--border-card);
+      border-radius: 30px;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      margin-top: 20px;
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      background: var(--bg-footer);
+      color: var(--text-footer);
+      padding: 40px 0 20px;
+      transition: background var(--transition-speed);
+    }
+    .footer a {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+    .footer-social i {
+      font-size: 1.6rem;
+      margin-left: 15px;
+      color: rgba(255,255,255,0.6);
+      transition: 0.2s;
+    }
+    .footer-social i:hover {
+      color: var(--color-accent);
+    }
+    .footer hr {
+      border: 0.5px solid rgba(255,255,255,0.06);
+      margin: 25px 0 10px;
+    }
+
+    /* ===== Section Alt ===== */
+    .section-alt {
+      background: var(--bg-section-alt);
+      transition: background var(--transition-speed);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 900px) {
+      .hero-grid, .about-grid, .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+      .nav-flex {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .nav-links {
+        justify-content: center;
+      }
+      .hero-content h2 {
+        font-size: 2.5rem;
+      }
+      .nav-controls {
+        width: 100%;
+        justify-content: center;
+      }
+      .admin-header {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+    @media (max-width: 550px) {
+      .hero-stats {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .demo-badge {
+        font-size: 0.75rem;
+        padding: 6px 16px;
+      }
+      .lang-toggle, .theme-toggle {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+      }
+      .nav-links a {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+      }
+      .admin-panel {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== نموذج تجريبي ===== -->
+<div style="background: var(--bg-demo); padding: 8px 0; text-align: center; border-bottom: 2px solid var(--color-accent); transition: background var(--transition-speed);">
+  <div class="container">
+    <span class="demo-badge"><i class="fas fa-flask"></i> <span id="demoText">نموذج تجريبي — شركة السلامة للاستثمار • v2.0</span></span>
+  </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<nav class="navbar">
+  <div class="container nav-flex">
+    <div class="logo">
+      <h1>السلامة <span>للاستثمار</span></h1>
+    </div>
+    <div class="nav-controls">
+      <div class="nav-links" id="navLinks">
+        <a href="#home" class="active" data-ar="الرئيسية" data-en="Home"><i class="fas fa-home"></i> <span>الرئيسية</span></a>
+        <a href="#about" data-ar="من نحن" data-en="About"><i class="fas fa-users"></i> <span>من نحن</span></a>
+        <a href="#services" data-ar="الخدمات" data-en="Services"><i class="fas fa-concierge-bell"></i> <span>الخدمات</span></a>
+        <a href="#projects" data-ar="الإنجازات" data-en="Projects"><i class="fas fa-trophy"></i> <span>الإنجازات</span></a>
+        <a href="#admin" data-ar="إدارة" data-en="Admin"><i class="fas fa-user-cog"></i> <span>إدارة</span></a>
+        <a href="#contact" data-ar="اتصل بنا" data-en="Contact"><i class="fas fa-phone-alt"></i> <span>اتصل بنا</span></a>
+      </div>
+      <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()"><i class="fas fa-globe"></i> <span id="langLabel">EN</span></button>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()"><i class="fas fa-moon"></i> <span id="themeLabel">ليلي</span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HOME ===== -->
+<section id="home" class="hero">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <h2 id="heroTitle">استثمار حكيم <span>لوجستيات متكاملة</span></h2>
+      <p id="heroDesc">تحت قيادة رؤية حكيمة، نقدم حلولاً لوجستية وفرصاً استثمارية مستدامة تدعم أعمالك بكفاءة وأمان.</p>
+      <div class="hero-stats">
+        <div class="stat-item"><strong>99%</strong><span id="stat1">دقة التوصيل</span></div>
+        <div class="stat-item"><strong>150+</strong><span id="stat2">مشروع استثماري</span></div>
+        <div class="stat-item"><strong>+20</strong><span id="stat3">شريك استراتيجي</span></div>
+      </div>
+      <div style="margin-top: 30px;">
+        <a href="#contact" class="btn" id="btnConsult"><i class="fas fa-handshake"></i> <span>طلب استشارة</span></a>
+        <a href="#projects" class="btn btn-outline" style="margin-right: 12px;" id="btnExplore"><i class="fas fa-chart-line"></i> <span>استكشف المشاريع</span></a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <i class="fas fa-building-columns"></i>
+      <h3>السلامة للاستثمار</h3>
+      <p style="color: var(--text-muted);">رؤية حكيمة، حلول شاملة</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== من نحن ===== -->
+<section id="about" class="section">
+  <div class="container">
+    <h2 class="section-title" id="aboutTitle">من نحن</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p><i class="fas fa-quote-right" style="color:var(--color-accent); font-size:1.8rem; opacity:0.6;"></i> <span id="aboutP1">شركة السلامة للاستثمار هي ذراع استثماري متكامل، نركز على تطوير مشاريع لوجستية وصناعية بمعايير عالمية. نؤمن بأن الاستثمار الحقيقي هو الذي يبني المستقبل ويدعم الاقتصاد الوطني.</span></p>
+        <p id="aboutP2">نقدم حلولاً مبتكرة في سلسلة الإمداد، وإدارة المستودعات، والنقل الذكي، إلى جانب استشارات مالية واستثمارية لضمان نمو أعمال شركائنا.</p>
+        <a href="#contact" class="btn" style="margin-top: 15px;" id="aboutBtn"><i class="fas fa-arrow-left"></i> <span>تواصل معنا</span></a>
+      </div>
+      <div class="about-image-box">
+        <i class="fas fa-people-group"></i>
+        <h3>فريق الخبراء</h3>
+        <p>نخبة من المستشارين والمخططين اللوجستيين</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== الخدمات ===== -->
+<section id="services" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title" id="servicesTitle">خدماتنا</h2>
+    <p class="section-sub" id="servicesSub">حلول متكاملة تلبي احتياجات أعمالك</p>
+    <div class="cards-grid">
+      <div class="card"><i class="fas fa-truck-fast"></i><h4 id="s1t">لوجستيات متقدمة</h4><p id="s1d">إدارة سلاسل التوريد، نقل، تخزين، توزيع باحترافية.</p></div>
+      <div class="card"><i class="fas fa-chart-pie"></i><h4 id="s2t">استشارات استثمارية</h4><p id="s2d">دراسات جدوى، تحليل أسواق، تخطيط مالي طويل الأمد.</p></div>
+      <div class="card"><i class="fas fa-warehouse"></i><h4 id="s3t">حلول المستودعات</h4><p id="s3d">تصميم وإدارة مراكز تخزين ذكية بأحدث الأنظمة.</p></div>
+      <div class="card"><i class="fas fa-shield-halved"></i><h4 id="s4t">حماية وأمان</h4><p id="s4d">أنظمة مراقبة، تأمين، وحماية بيانات وسلع.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== الإنجازات ===== -->
+<section id="projects" class="section">
+  <div class="container">
+    <h2 class="section-title" id="projectsTitle">الإنجازات والمشاريع</h2>
+    <p class="section-sub" id="projectsSub">نفخر بشراكاتنا ومشاريعنا الناجحة</p>
+    <div class="cards-grid">
+      <div class="project-card"><div class="icon-big"><i class="fas fa-city"></i></div><h4 id="p1t">مدينة لوجستية</h4><p id="p1d">تطوير مدينة لوجستية متكاملة بمساحة 2 مليون م²</p><span style="color:var(--color-accent); font-weight:700;">+150 مليون</span></div>
+      <div class="project-card"><div class="icon-big"><i class="fas fa-ship"></i></div><h4 id="p2t">ميناء جاف</h4><p id="p2d">إنشاء ميناء جاف يربط بين الطرق البرية والبحرية</p><span style="color:var(--color-accent); font-weight:700;">اكتمال 2025</span></div>
+      <div class="project-card"><div class="icon-big"><i class="fas fa-robot"></i></div><h4 id="p3t">أتمتة المستودعات</h4><p id="p3d">تطبيق أنظمة روبوتية وذكاء اصطناعي في التخزين</p><span style="color:var(--color-accent); font-weight:700;">كفاءة +40%</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ADMIN PANEL ===== -->
+<section id="admin" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title" id="adminTitle">لوحة الإدارة</h2>
+    
+    <div class="admin-panel">
+      <!-- Admin Header -->
+      <div class="admin-header">
+        <div>
+          <h3 id="adminWelcome">👋 مرحباً، المدير</h3>
+          <p id="adminSub" style="color: var(--text-muted);">يمكنك إدارة المحتوى والمستخدمين من هنا</p>
+        </div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button class="btn btn-success" onclick="openAddModal()"><i class="fas fa-plus"></i> <span id="adminAddBtn">إضافة جديد</span></button>
+          <button class="btn btn-outline" onclick="refreshData()"><i class="fas fa-sync"></i> <span id="adminRefreshBtn">تحديث</span></button>
+        </div>
+      </div>
+
+      <!-- Admin Stats -->
+      <div class="admin-stats">
+        <div class="stat-box">
+          <i class="fas fa-users"></i>
+          <h4 id="statUsers">12</h4>
+          <p id="statUsersLabel">المستخدمين</p>
+        </div>
+        <div class="stat-box">
+          <i class="fas fa-file-alt"></i>
+          <h4 id="statProjects">8</h4>
+          <p id="statProjectsLabel">المشاريع</p>
+        </div>
+        <div class="stat-box">
+          <i class="fas fa-envelope"></i>
+          <h4 id="statMessages">24</h4>
+          <p id="statMessagesLabel">الرسائل</p>
+        </div>
+        <div class="stat-box">
+          <i class="fas fa-chart-line"></i>
+          <h4 id="statGrowth">+15%</h4>
+          <p id="statGrowthLabel">النمو</p>
+        </div>
+      </div>
+
+      <!-- Users Table -->
+      <h4 style="margin: 20px 0 10px; color: var(--text-primary);"><i class="fas fa-user-cog"></i> <span id="usersTableTitle">إدارة المستخدمين</span></h4>
+      <div class="table-container">
+        <table id="usersTable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th id="thName">الاسم</th>
+              <th id="thEmail">البريد الإلكتروني</th>
+              <th id="thRole">الصلاحية</th>
+              <th id="thActions">الإجراءات</th>
+            </tr>
+          </thead>
+          <tbody id="usersTableBody">
+            <!-- Data loaded by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Projects Table -->
+      <h4 style="margin: 30px 0 10px; color: var(--text-primary);"><i class="fas fa-project-diagram"></i> <span id="projectsTableTitle">إدارة المشاريع</span></h4>
+      <div class="table-container">
+        <table id="projectsTable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th id="thProjectName">اسم المشروع</th>
+              <th id="thProjectStatus">الحالة</th>
+              <th id="thProjectActions">الإجراءات</th>
+            </tr>
+          </thead>
+          <tbody id="projectsTableBody">
+            <!-- Data loaded by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== اتصل بنا ===== -->
+<section id="contact" class="section">
+  <div class="container">
+    <h2 class="section-title" id="contactTitle">اتصل بنا</h2>
+    <div class="contact-wrap">
+      <div>
+        <form onsubmit="alert('شكراً لتواصلك مع شركة السلامة للاستثمار، سنرد عليك قريباً.'); return false;">
+          <div class="form-group"><label id="labelName"><i class="fas fa-user"></i> الاسم</label><input type="text" placeholder="أدخل اسمك" required /></div>
+          <div class="form-group"><label id="labelEmail"><i class="fas fa-envelope"></i> البريد الإلكتروني</label><input type="email" placeholder="example@domain.com" required /></div>
+          <div class="form-group"><label id="labelMsg"><i class="fas fa-comment"></i> الرسالة</label><textarea rows="4" placeholder="تفاصيل طلبك أو استشارتك"></textarea></div>
+          <button type="submit" class="btn" id="sendBtn"><i class="fas fa-paper-plane"></i> <span>إرسال</span></button>
+        </form>
+        <div style="margin-top: 20px; display: flex; gap: 20px; flex-wrap: wrap;">
+          <span><i class="fas fa-phone" style="color:var(--color-accent);"></i> +966 12 345 6789</span>
+          <span><i class="fas fa-envelope" style="color:var(--color-accent);"></i> info@alsalamah-invest.com</span>
+        </div>
+      </div>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.912376465293!2d46.67568331545413!3d24.77430728461684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f1c6b3e3f4b3f%3A0x3f2c3e4d5e6f7a8b!2sRiyadh%20Saudi%20Arabia!5e0!3m2!1sen!2ssa!4v1617798765432!5m2!1sen!2ssa" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MODAL ===== -->
+<div class="modal" id="adminModal">
+  <div class="modal-content">
+    <h3 id="modalTitle">إضافة مستخدم جديد</h3>
+    <form id="modalForm" onsubmit="saveItem(); return false;">
+      <div class="form-group">
+        <label id="modalNameLabel">الاسم</label>
+        <input type="text" id="modalName" placeholder="أدخل الاسم" required />
+      </div>
+      <div class="form-group">
+        <label id="modalEmailLabel">البريد الإلكتروني</label>
+        <input type="email" id="modalEmail" placeholder="example@domain.com" required />
+      </div>
+      <div class="form-group">
+        <label id="modalRoleLabel">الصلاحية</label>
+        <input type="text" id="modalRole" placeholder="مدير، محرر، مشرف" />
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-outline" onclick="closeModal()"><span id="modalCancel">إلغاء</span></button>
+        <button type="submit" class="btn btn-success" id="modalSaveBtn"><i class="fas fa-save"></i> <span id="modalSave">حفظ</span></button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+      <div>
+        <h3 style="color: white; font-weight: 800;">السلامة للاستثمار</h3>
+        <p style="font-size: 0.9rem;" id="footerSlogan">رؤية حكيمة، حلول لوجستية شاملة</p>
+        <p style="margin-top: 10px; font-size: 0.85rem;">© 2026 جميع الحقوق محفوظة</p>
+      </div>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <hr>
+    <p style="font-size: 0.8rem; opacity:0.6; text-align: center;"><i class="fas fa-shield-alt"></i> <span id="footerSecure">حماية و سرعة • نظام آمن</span></p>
+  </div>
+</footer>
+
+<script>
+  // ===== LANGUAGE STATE =====
+  let currentLang = 'ar';
+
+  // ===== TRANSLATIONS =====
+  const translations = {
+    ar: {
+      demo: 'نموذج تجريبي — شركة السلامة للاستثمار • v2.0',
+      heroTitle: 'استثمار حكيم <span>لوجستيات متكاملة</span>',
+      heroDesc: 'تحت قيادة رؤية حكيمة، نقدم حلولاً لوجستية وفرصاً استثمارية مستدامة تدعم أعمالك بكفاءة وأمان.',
+      stat1: 'دقة التوصيل',
+      stat2: 'مشروع استثماري',
+      stat3: 'شريك استراتيجي',
+      btnConsult: 'طلب استشارة',
+      btnExplore: 'استكشف المشاريع',
+      aboutTitle: 'من نحن',
+      aboutP1: 'شركة السلامة للاستثمار هي ذراع استثماري متكامل، نركز على تطوير مشاريع لوجستية وصناعية بمعايير عالمية. نؤمن بأن الاستثمار الحقيقي هو الذي يبني المستقبل ويدعم الاقتصاد الوطني.',
+      aboutP2: 'نقدم حلولاً مبتكرة في سلسلة الإمداد، وإدارة المستودعات، والنقل الذكي، إلى جانب استشارات مالية واستثمارية لضمان نمو أعمال شركائنا.',
+      aboutBtn: 'تواصل معنا',
+      servicesTitle: 'خدماتنا',
+      servicesSub: 'حلول متكاملة تلبي احتياجات أعمالك',
+      s1t: 'لوجستيات متقدمة',
+      s1d: 'إدارة سلاسل التوريد، نقل، تخزين، توزيع باحترافية.',
+      s2t: 'استشارات استثمارية',
+      s2d: 'دراسات جدوى، تحليل أسواق، تخطيط مالي طويل الأمد.',
+      s3t: 'حلول المستودعات',
+      s3d: 'تصميم وإدارة مراكز تخزين ذكية بأحدث الأنظمة.',
+      s4t: 'حماية وأمان',
+      s4d: 'أنظمة مراقبة، تأمين، وحماية بيانات وسلع.',
+      projectsTitle: 'الإنجازات والمشاريع',
+      projectsSub: 'نفخر بشراكاتنا ومشاريعنا الناجحة',
+      p1t: 'مدينة لوجستية',
+      p1d: 'تطوير مدينة لوجستية متكاملة بمساحة 2 مليون م²',
+      p2t: 'ميناء جاف',
+      p2d: 'إنشاء ميناء جاف يربط بين الطرق البرية والبحرية',
+      p3t: 'أتمتة المستودعات',
+      p3d: 'تطبيق أنظمة روبوتية وذكاء اصطناعي في التخزين',
+      adminTitle: 'لوحة الإدارة',
+      adminWelcome: '👋 مرحباً، المدير',
+      adminSub: 'يمكنك إدارة المحتوى والمستخدمين من هنا',
+      adminAddBtn: 'إضافة جديد',
+      adminRefreshBtn: 'تحديث',
+      statUsers: 'المستخدمين',
+      statProjects: 'المشاريع',
+      statMessages: 'الرسائل',
+      statGrowth: 'النمو',
+      usersTableTitle: 'إدارة المستخدمين',
+      projectsTableTitle: 'إدارة المشاريع',
+      thName: 'الاسم',
+      thEmail: 'البريد الإلكتروني',
+      thRole: 'الصلاحية',
+      thActions: 'الإجراءات',
+      thProjectName: 'اسم المشروع',
+      thProjectStatus: 'الحالة',
+      thProjectActions: 'الإجراءات',
+      modalTitle: 'إضافة مستخدم جديد',
+      modalNameLabel: 'الاسم',
+      modalEmailLabel: 'البريد الإلكتروني',
+      modalRoleLabel: 'الصلاحية',
+      modalCancel: 'إلغاء',
+      modalSave: 'حفظ',
+      contactTitle: 'اتصل بنا',
+      labelName: 'الاسم',
+      labelEmail: 'البريد الإلكتروني',
+      labelMsg: 'الرسالة',
+      sendBtn: 'إرسال',
+      footerSlogan: 'رؤية حكيمة، حلول لوجستية شاملة',
+      footerSecure: 'حماية و سرعة • نظام آمن',
+      nav: ['الرئيسية', 'من نحن', 'الخدمات', 'الإنجازات', 'إدارة', 'اتصل بنا'],
+      langLabel: 'EN',
+      edit: 'تعديل',
+      delete: 'حذف',
+      active: 'نشط',
+      pending: 'قيد الانتظار',
+      completed: 'مكتمل'
+    },
+    en: {
+      demo: 'Demo — Al-Salamah for Investment • v2.0',
+      heroTitle: 'Wise Investment <span>Integrated Logistics</span>',
+      heroDesc: 'Under wise leadership, we provide logistics solutions and sustainable investment opportunities that support your business with efficiency and security.',
+      stat1: 'Delivery Accuracy',
+      stat2: 'Investment Projects',
+      stat3: 'Strategic Partners',
+      btnConsult: 'Request Consultation',
+      btnExplore: 'Explore Projects',
+      aboutTitle: 'About Us',
+      aboutP1: 'Al-Salamah for Investment is an integrated investment arm, focused on developing logistics and industrial projects to global standards. We believe that true investment builds the future and supports the national economy.',
+      aboutP2: 'We provide innovative solutions in supply chain, warehouse management, smart transportation, along with financial and investment consulting to ensure the growth of our partners\' businesses.',
+      aboutBtn: 'Contact Us',
+      servicesTitle: 'Our Services',
+      servicesSub: 'Integrated solutions that meet your business needs',
+      s1t: 'Advanced Logistics',
+      s1d: 'Supply chain management, transportation, storage, and distribution professionally.',
+      s2t: 'Investment Consulting',
+      s2d: 'Feasibility studies, market analysis, long-term financial planning.',
+      s3t: 'Warehouse Solutions',
+      s3d: 'Design and management of smart storage centers with the latest systems.',
+      s4t: 'Protection & Security',
+      s4d: 'Monitoring systems, insurance, and data and goods protection.',
+      projectsTitle: 'Projects & Achievements',
+      projectsSub: 'We are proud of our partnerships and successful projects',
+      p1t: 'Logistics City',
+      p1d: 'Developing an integrated logistics city with an area of 2 million m²',
+      p2t: 'Dry Port',
+      p2d: 'Establishing a dry port connecting land and sea routes',
+      p3t: 'Warehouse Automation',
+      p3d: 'Implementing robotic and AI systems in storage',
+      adminTitle: 'Admin Panel',
+      adminWelcome: '👋 Welcome, Admin',
+      adminSub: 'Manage content and users here',
+      adminAddBtn: 'Add New',
+      adminRefreshBtn: 'Refresh',
+      statUsers: 'Users',
+      statProjects: 'Projects',
+      statMessages: 'Messages',
+      statGrowth: 'Growth',
+      usersTableTitle: 'User Management',
+      projectsTableTitle: 'Project Management',
+      thName: 'Name',
+      thEmail: 'Email',
+      thRole: 'Role',
+      thActions: 'Actions',
+      thProjectName: 'Project Name',
+      thProjectStatus: 'Status',
+      thProjectActions: 'Actions',
+      modalTitle: 'Add New User',
+      modalNameLabel: 'Name',
+      modalEmailLabel: 'Email',
+      modalRoleLabel: 'Role',
+      modalCancel: 'Cancel',
+      modalSave: 'Save',
+      contactTitle: 'Contact Us',
+      labelName: 'Name',
+      labelEmail: 'Email',
+      labelMsg: 'Message',
+      sendBtn: 'Send',
+      footerSlogan: 'Wise vision, comprehensive logistics solutions',
+      footerSecure: 'Protection & Speed • Secure System',
+      nav: ['Home', 'About', 'Services', 'Projects', 'Admin', 'Contact'],
+      langLabel: 'AR',
+      edit: 'Edit',
+      delete: 'Delete',
+      active: 'Active',
+      pending: 'Pending',
+      completed: 'Completed'
+    }
+  };
+
+  // ===== DATA STORE =====
+  let users = [
+    { id: 1, name: 'أحمد محمد', email: 'ahmed@example.com', role: 'مدير' },
+    { id: 2, name: 'سارة علي', email: 'sara@example.com', role: 'محرر' },
+    { id: 3, name: 'خالد حسن', email: 'khaled@example.com', role: 'مشرف' }
+  ];
+
+  let projects = [
+    { id: 1, name: 'مدينة لوجستية', status: 'مكتمل' },
+    { id: 2, name: 'ميناء جاف', status: 'قيد الانتظار' },
+    { id: 3, name: 'أتمتة المستودعات', status: 'نشط' }
+  ];
+
+  let nextUserId = 4;
+  let nextProjectId = 4;
+  let editingId = null;
+  let editingType = null;
+
+  // ===== RENDER TABLES =====
+  function renderUsers() {
+    const tbody = document.getElementById('usersTableBody');
+    if (!tbody) return;
+    tbody.innerHTML = users.map((user, index) => `
+      <tr>
+        <td>${index + 1}</td>
+        <td>${user.name}</td>
+        <td>${user.email}</td>
+        <td><span style="background: var(--color-accent); color: #0b2b4a; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem;">${user.role}</span></td>
+        <td>
+          <div class="action-btns">
+            <button class="edit-btn" onclick="editUser(${user.id})"><i class="fas fa-edit"></i> <span class="editText">تعديل</span></button>
+            <button class="delete-btn" onclick="deleteUser(${user.id})"><i class="fas fa-trash"></i> <span class="deleteText">حذف</span></button>
+          </div>
+        </td>
+      </tr>
+    `).join('');
+  }
+
+  function renderProjects() {
+    const tbody = document.getElementById('projectsTableBody');
+    if (!tbody) return;
+    const statusMap = {
+      'نشط': 'active',
+      'قيد الانتظار': 'pending',
+      'مكتمل': 'completed',
+      'Active': 'active',
+      'Pending': 'pending',
+      'Completed': 'completed'
+    };
+    tbody.innerHTML = projects.map((project, index) => {
+      const statusClass = statusMap[project.status] || 'active';
+      return `
+      <tr>
+        <td>${index + 1}</td>
+        <td>${project.name}</td>
+        <td><span style="background: var(--color-${statusClass}); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem;">${project.status}</span></td>
+        <td>
+          <div class="action-btns">
+            <button class="edit-btn" onclick="editProject(${project.id})"><i class="fas fa-edit"></i> <span class="editText">تعديل</span></button>
+            <button class="delete-btn" onclick="deleteProject(${project.id})"><i class="fas fa-trash"></i> <span class="deleteText">حذف</span></button>
+          </div>
+        </td>
+      </tr>
+    `}).join('');
+  }
+
+  function renderAll() {
+    renderUsers();
+    renderProjects();
+    updateStats();
+    updateLanguageTexts();
+  }
+
+  // ===== STATS =====
+  function updateStats() {
+    document.getElementById('statUsers').textContent = users.length;
+    document.getElementById('statProjects').textContent = projects.length;
+    document.getElementById('statMessages').textContent = Math.floor(Math.random() * 30) + 10;
+    document.getElementById('statGrowth').textContent = '+15%';
+  }
+
+  // ===== CRUD OPERATIONS =====
+  function openAddModal() {
+    editingId = null;
+    editingType = 'user';
+    document.getElementById('modalTitle').textContent = currentLang === 'ar' ? 'إضافة مستخدم جديد' : 'Add New User';
+    document.getElementById('modalName').value = '';
+    document.getElementById('modalEmail').value = '';
+    document.getElementById('modalRole').value = '';
+    document.getElementById('adminModal').style.display = 'flex';
+  }
+
+  function editUser(id) {
+    const user = users.find(u => u.id === id);
+    if (!user) return;
+    editingId = id;
+    editingType = 'user';
+    document.getElementById('modalTitle').textContent = currentLang === 'ar' ? 'تعديل مستخدم' : 'Edit User';
+    document.getElementById('modalName').value = user.name;
+    document.getElementById('modalEmail').value = user.email;
+    document.getElementById('modalRole').value = user.role;
+    document.getElementById('adminModal').style.display = 'flex';
+  }
+
+  function editProject(id) {
+    const project = projects.find(p => p.id === id);
+    if (!project) return;
+    editingId = id;
+    editingType = 'project';
+    document.getElementById('modalTitle').textContent = currentLang === 'ar' ? 'تعديل مشروع' : 'Edit Project';
+    document.getElementById('modalName').value = project.name;
+    document.getElementById('modalEmail').value = project.status;
+    document.getElementById('modalRole').value = '';
+    document.getElementById('adminModal').style.display = 'flex';
+    // Hide email and role fields for project
+    document.querySelector('#modalEmailLabel').style.display = 'none';
+    document.querySelector('#modalEmail').style.display = 'none';
+    document.querySelector('#modalRoleLabel').style.display = 'none';
+    document.querySelector('#modalRole').style.display = 'none';
+  }
+
+  function saveItem() {
+    const name = document.getElementById('modalName').value.trim();
+    const email = document.getElementById('modalEmail').value.trim();
+    const role = document.getElementById('modalRole').value.trim();
+
+    if (!name) {
+      alert(currentLang === 'ar' ? 'الرجاء إدخال الاسم' : 'Please enter name');
+      return;
+    }
+
+    if (editingType === 'user') {
+      if (!email) {
+        alert(currentLang === 'ar' ? 'الرجاء إدخال البريد الإلكتروني' : 'Please enter email');
+        return;
+      }
+      if (editingId) {
+        // Edit
+        const user = users.find(u => u.id === editingId);
+        if (user) {
+          user.name = name;
+          user.email = email;
+          user.role = role || 'مستخدم';
+        }
+        alert(currentLang === 'ar' ? 'تم تحديث المستخدم بنجاح' : 'User updated successfully');
+      } else {
+        // Add
+        users.push({ id: nextUserId++, name, email, role: role || 'مستخدم' });
+        alert(currentLang === 'ar' ? 'تم إضافة المستخدم بنجاح' : 'User added successfully');
+      }
+    } else if (editingType === 'project') {
+      if (editingId) {
+        const project = projects.find(p => p.id === editingId);
+        if (project) {
+          project.name = name;
+          project.status = email || 'نشط';
+        }
+        alert(currentLang === 'ar' ? 'تم تحديث المشروع بنجاح' : 'Project updated successfully');
+      }
+    }
+
+    closeModal();
+    renderAll();
+    // Show email and role fields again
+    document.querySelector('#modalEmailLabel').style.display = '';
+    document.querySelector('#modalEmail').style.display = '';
+    document.querySelector('#modalRoleLabel').style.display = '';
+    document.querySelector('#modalRole').style.display = '';
+  }
+
+  function deleteUser(id) {
+    if (confirm(currentLang === 'ar' ? 'هل أنت متأكد من حذف هذا المستخدم؟' : 'Are you sure you want to delete this user?')) {
+      users = users.filter(u => u.id !== id);
+      renderAll();
+      alert(currentLang === 'ar' ? 'تم حذف المستخدم بنجاح' : 'User deleted successfully');
+    }
+  }
+
+  function deleteProject(id) {
+    if (confirm(currentLang === 'ar' ? 'هل أنت متأكد من حذف هذا المشروع؟' : 'Are you sure you want to delete this project?')) {
+      projects = projects.filter(p => p.id !== id);
+      renderAll();
+      alert(currentLang === 'ar' ? 'تم حذف المشروع بنجاح' : 'Project deleted successfully');
+    }
+  }
+
+  function closeModal() {
+    document.getElementById('adminModal').style.display = 'none';
+    editingId = null;
+    editingType = null;
+    // Show all fields
+    document.querySelector('#modalEmailLabel').style.display = '';
+    document.querySelector('#modalEmail').style.display = '';
+    document.querySelector('#modalRoleLabel').style.display = '';
+    document.querySelector('#modalRole').style.display = '';
+  }
+
+  function refreshData() {
+    renderAll();
+    alert(currentLang === 'ar' ? 'تم تحديث البيانات' : 'Data refreshed');
+  }
+
+  // ===== LANGUAGE =====
+  function updateLanguageTexts() {
+    const t = translations[currentLang];
+    // Update table headers and button texts
+    document.querySelectorAll('.editText').forEach(el => el.textContent = t.edit);
+    document.querySelectorAll('.deleteText').forEach(el => el.textContent = t.delete);
+    
+    // Update status texts in projects
+    document.querySelectorAll('#projectsTableBody tr').forEach(row => {
+      const statusCell = row.querySelector('td:nth-child(3) span');
+      if (statusCell) {
+        const status = statusCell.textContent;
+        if (status === 'نشط' || status === 'Active') {
+          statusCell.textContent = currentLang === 'ar' ? 'نشط' : 'Active';
+        } else if (status === 'قيد الانتظار' || status === 'Pending') {
+          statusCell.textContent = currentLang === 'ar' ? 'قيد الانتظار' : 'Pending';
+        } else if (status === 'مكتمل' || status === 'Completed') {
+          statusCell.textContent = currentLang === 'ar' ? 'مكتمل' : 'Completed';
+        }
+      }
+    });
+  }
+
+  function updateLanguage(lang) {
+    const t = translations[lang];
+    if (!t) return;
+
+    currentLang = lang;
+
+    // Demo
+    document.getElementById('demoText').textContent = t.demo;
+
+    // Hero
+    document.getElementById('heroTitle').innerHTML = t.heroTitle;
+    document.getElementById('heroDesc').textContent = t.heroDesc;
+    document.getElementById('stat1').textContent = t.stat1;
+    document.getElementById('stat2').textContent = t.stat2;
+    document.getElementById('stat3').textContent = t.stat3;
+    document.querySelector('#btnConsult span').textContent = t.btnConsult;
+    document.querySelector('#btnExplore span').textContent = t.btnExplore;
+
+    // About
+    document.getElementById('aboutTitle').textContent = t.aboutTitle;
+    document.getElementById('aboutP1').textContent = t.aboutP1;
+    document.getElementById('aboutP2').textContent = t.aboutP2;
+    document.querySelector('#aboutBtn span').textContent = t.aboutBtn;
+
+    // Services
+    document.getElementById('servicesTitle').textContent = t.servicesTitle;
+    document.getElementById('servicesSub').textContent = t.servicesSub;
+    document.getElementById('s1t').textContent = t.s1t;
+    document.getElementById('s1d').textContent = t.s1d;
+    document.getElementById('s2t').textContent = t.s2t;
+    document.getElementById('s2d').textContent = t.s2d;
+    document.getElementById('s3t').textContent = t.s3t;
+    document.getElementById('s3d').textContent = t.s3d;
+    document.getElementById('s4t').textContent = t.s4t;
+    document.getElementById('s4d').textContent = t.s4d;
+
+    // Projects
+    document.getElementById('projectsTitle').textContent = t.projectsTitle;
+    document.getElementById('projectsSub').textContent = t.projectsSub;
+    document.getElementById('p1t').textContent = t.p1t;
+    document.getElementById('p1d').textContent = t.p1d;
+    document.getElementById('p2t').textContent = t.p2t;
+    document.getElementById('p2d').textContent = t.p2d;
+    document.getElementById('p3t').textContent = t.p3t;
+    document.getElementById('p3d').textContent = t.p3d;
+
+    // Admin
+    document.getElementById('adminTitle').textContent = t.adminTitle;
+    document.getElementById('adminWelcome').textContent = t.adminWelcome;
+    document.getElementById('adminSub').textContent = t.adminSub;
+    document.querySelector('#adminAddBtn span').textContent = t.adminAddBtn;
+    document.querySelector('#adminRefreshBtn span').textContent = t.adminRefreshBtn;
+    document.getElementById('statUsersLabel').textContent = t.statUsers;
+    document.getElementById('statProjectsLabel').textContent = t.statProjects;
+    document.getElementById('statMessagesLabel').textContent = t.statMessages;
+    document.getElementById('statGrowthLabel').textContent = t.statGrowth;
+    document.getElementById('usersTableTitle').textContent = t.usersTableTitle;
+    document.getElementById('projectsTableTitle').textContent = t.projectsTableTitle;
+    document.getElementById('thName').textContent = t.thName;
+    document.getElementById('thEmail').textContent = t.thEmail;
+    document.getElementById('thRole').textContent = t.thRole;
+    document.getElementById('thActions').textContent = t.thActions;
+    document.getElementById('thProjectName').textContent = t.thProjectName;
+    document.getElementById('thProjectStatus').textContent = t.thProjectStatus;
+    document.getElementById('thProjectActions').textContent = t.thProjectActions;
+
+    // Modal
+    document.getElementById('modalTitle').textContent = t.modalTitle;
+    document.getElementById('modalNameLabel').textContent = t.modalNameLabel;
+    document.getElementById('modalEmailLabel').textContent = t.modalEmailLabel;
+    document.getElementById('modalRoleLabel').textContent = t.modalRoleLabel;
+    document.querySelector('#modalCancel span').textContent = t.modalCancel;
+    document.querySelector('#modalSave span').textContent = t.modalSave;
+
+    // Contact
+    document.getElementById('contactTitle').textContent = t.contactTitle;
+    document.getElementById('labelName').innerHTML = '<i class="fas fa-user"></i> ' + t.labelName;
+    document.getElementById('labelEmail').innerHTML = '<i class="fas fa-envelope"></i> ' + t.labelEmail;
+    document.getElementById('labelMsg').innerHTML = '<i class="fas fa-comment"></i> ' + t.labelMsg;
+    document.querySelector('#sendBtn span').textContent = t.sendBtn;
+
+    // Footer
+    document.getElementById('footerSlogan').textContent = t.footerSlogan;
+    document.getElementById('footerSecure').textContent = t.footerSecure;
+
+    // Nav
+    const navItems = document.querySelectorAll('#navLinks a');
+    navItems.forEach((link, index) => {
+      if (index < t.nav.length) {
+        const span = link.querySelector('span');
+        if (span) span.textContent = t.nav[index];
+      }
+    });
+
+    document.getElementById('langLabel').textContent = t.langLabel;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.lang = lang;
+
+    // Update table texts
+    updateLanguageTexts();
+  }
+
+  function toggleLanguage() {
+    const newLang = currentLang === 'ar' ? 'en' : 'ar';
+    updateLanguage(newLang);
+  }
+
+  // ===== THEME =====
+  let currentTheme = 'light';
+
+  function toggleTheme() {
+    const html = document.documentElement;
+    if (currentTheme === 'light') {
+      html.setAttribute('data-theme', 'dark');
+      currentTheme = 'dark';
+      document.getElementById('themeLabel').textContent = 'نهاري';
+      document.querySelector('.theme-toggle i').className = 'fas fa-sun';
+    } else {
+      html.removeAttribute('data-theme');
+      currentTheme = 'light';
+      document.getElementById('themeLabel').textContent = 'ليلي';
+      document.querySelector('.theme-toggle i').className = 'fas fa-moon';
+    }
+  }
+
+  // ===== INIT =====
+  updateLanguage('ar');
+  renderAll();
+
+  // Close modal on outside click
+  window.onclick = function(event) {
+    const modal = document.getElementById('adminModal');
+    if (event.target === modal) {
+      closeModal();
+    }
+  };
+
+  // Nav active
+  document.querySelectorAll('#navLinks a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      document.querySelectorAll('#navLinks a').forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  console.log('✅ موقع السلامة للاستثمار - إدارة متكاملة مع صلاحيات التعديل والحذف والإضافة');
+</script>
+</body>
+  </html>      margin-left: 8px;
       color: #ffd966;
     }
 
